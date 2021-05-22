@@ -1,10 +1,8 @@
-<div class="row">
-                <div class="col s12">
-                  <div class="about-inner">
+
                     <div class="row">
                       <div class="col s12 m4 l3">
                         <div class="about-inner-left">
-                          <img class="profile-img" src="img/profile-img1.jpg" alt="Profile Image">
+                          <img class="profile-img" src="img/profile-img1.jpg" alt="Profile Image" style="width:500px;height:600px;">
                         </div>
                       </div>
                       <div class="col s12 m8 l9">
@@ -23,6 +21,4 @@
                             </ul>
                           </div>
                           
-                        </div>
-                      </div>
-                    </div>
+                    
