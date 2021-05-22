@@ -1,5 +1,4 @@
-<div class="container">
-              <div class="row">
+<div class="row">
                 <div class="col s12">
                   <div class="about-inner">
                     <div class="row">
@@ -27,7 +26,3 @@
                         </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            </div>
