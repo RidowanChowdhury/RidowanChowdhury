@@ -10,13 +10,12 @@
                       <div class="col s12 m8 l9">
                         <div class="about-inner-right">
                           <h3>About Me</h3>
-                          <p>I am a programming and technologies enthusiast, currently looking for an opportunity to work in any programming related job. I am confident and motivated enough to complete
-			tasks within the scopes of algorithms, data structures, and artificial intelligence. Also, I am passionate about theoretical physics and literature.</p>
+                          <p>Hi !! I am Ridowan. I am working as a Software Engineer at Together Initiatives Ltd. I am a willing to contribute on your project withing the scopes of web development(angular, spring boot), app development(flutter) and artificial intelligence(python, tensorflow,keras) to develop my portfolio. Also, I am passionate about theoretical physics and literature.</p>
                           <div class="personal-information col s12 m12 l6">
                             <h3>Personal Information</h3>
                             <ul>
                               <li><span>Name : </span>Md. Ridowan Chowdhury </li>
-                              <li><span>Age : </span>26 Years</li>
+                              <li><span>Age : </span>28 Years</li>
                               <li><span>Phone : </span>01703845771</li>
                               <li><span>Email : </span>chowdhuryridowan@gmail.com</li>
                               <li><span>Address : </span>Dhaka,Bangladesh</li>
