@@ -10,10 +10,10 @@ Ridowan</h1>
 
 - 🔭 I’m currently working in <a href="https://bjitgroup.com/" target="blank">BJIT Limited</a>
 
-- 🌱 I’m currently working on backend development. (spring boot)
+- 🌱 I’m currently working on backend development.
 
 
-- 🌱 I’m currently working with Java && Spring Boot.
+- 🌱 I’m mostly working with Java and Spring Boot.
 
 
 - 📫 How to reach me **chowdhuryridowan@gmail.com**
