@@ -1,7 +1,7 @@
 /* Reset default margin and padding */
 body, h1, h2, h3, p {
-    margin: 5;
-    padding: 5;
+    margin: 15;
+    padding: 15;
 }
 
 /* Basic styling for header */
