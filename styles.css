@@ -1,9 +1,16 @@
 /* Reset default margin and padding */
 body, h1, h2, h3, p {
-    margin: 15;
-    padding: 15;
+    margin: 0;
+    padding: 0;
 }
-
+@media (max-width: 576px) {
+    .section {
+        padding: 1rem 0;
+        margin: 0 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}
 /* Basic styling for header */
 .hero {
     background-image: url('bg-image1.jpg'); /* Replace with your background image */
@@ -44,6 +51,10 @@ nav ul li a {
 .section {
     background-color: #FFE4F4;
     padding: 1rem 0;
+    margin: 0 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 .section-content {
