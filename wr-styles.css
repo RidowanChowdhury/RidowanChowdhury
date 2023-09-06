@@ -1,58 +1,69 @@
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+} /* Container for the navigation menu */
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333; /* Background color for the navigation bar */
+  color: #fff; /* Text color */
+  padding: 1rem 4rem;
+}
 
- body, h1, h2, h3, p{
-     margin: 0;
-     padding: 0;
- }       /* Container for the navigation menu */
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: #333; /* Background color for the navigation bar */
-            color: #fff; /* Text color */
-    padding: 1rem 4rem;
-        }
+/* Left-side navigation elements */
+.left-nav {
+  display: flex;
+  align-items: center;
+}
 
-        /* Left-side navigation elements */
-        .left-nav {
-            display: flex;
-            align-items: center;
-        }
+/* Right-side navigation elements */
+.right-nav {
+  display: flex;
+  align-items: center;
+}
 
-        /* Right-side navigation elements */
-        .right-nav {
-            display: flex;
-            align-items: center;
-        }
-
-        /* Style for individual navigation items */
-        .nav-item {
-            margin: 0 10px; /* Adjust the margin for spacing between items */
-            text-decoration: none;
-            color: #fff; /* Text color for navigation items */
-        }
+/* Style for individual navigation items */
+.nav-item {
+  margin: 0 10px; /* Adjust the margin for spacing between items */
+  color: #fff; /* Text color for navigation items */
+}
+.section {
+  background-color: #ffe8f8;
+  padding: 1rem 0;
+  margin: 0 0px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 .section-content {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .section-content p,
 .section-content ul,
 .section-content li,
 .section-content h2 {
-    margin-bottom: 20px; /* Adjust the value as needed for more or less spacing */
+  margin-bottom: 20px; /* Adjust the value as needed for more or less spacing */
 }
- .content {
-            flex: 1; /* Allow content to grow and push footer down */
-        }
- .wrapper {
-            min-height: 100vh; /* Set minimum height to full viewport height */
-            display: flex;
-            flex-direction: column;
-        }
+.content {
+  flex: 1; /* Allow content to grow and push footer down */
+}
+.wrapper {
+  min-height: 100vh; /* Set minimum height to full viewport height */
+  display: flex;
+  background-color: #ffe8f8;
+
+  flex-direction: column;
+}
 
 /* Styling for footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
 }

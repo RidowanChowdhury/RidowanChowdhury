@@ -1,82 +1,84 @@
 /* Reset default margin and padding */
-body, h1, h2, h3, p{
-    margin: 0;
-    padding: 0;
+body,
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
 }
 @media (max-width: 576px) {
-    .section {
-        padding: 1rem 0;
-        margin: 0 0px;
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-}
-/* Basic styling for header */
-.hero {
-    background-image: url('bg-image1.jpg'); /* Replace with your background image */
-    background-size: cover;
-    background-position: center;
-    color: whitesmoke;
-    text-align: right;
-    padding: 10rem 0;
-}
-
-.hero-content {
- padding-left: 10px;
- padding-right: 10px;
- max-width: 800px;
- margin: 0 auto;
-}
-
-/* Styling for navigation */
-nav {
-    background-color: #222;
-    text-align: center;
-    padding: 0.01rem 0;
-}
-
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-    text-align: center;
-
-}
-
-nav ul li a {
-text-align: center;
-    color: whitesmoke;
-     margin-right: 10px;
-    text-decoration: none;
-}
-
-/* Styling for sections */
-.section {
-    background-color: #FFE8F8;
+  .section {
     padding: 1rem 0;
     margin: 0 0px;
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+/* Basic styling for header */
+.hero {
+  background-image: url("bg-image1.jpg"); /* Replace with your background image */
+  background-size: cover;
+  background-position: center;
+  color: whitesmoke;
+  text-align: right;
+  padding: 10rem 0;
+}
 
+.hero-content {
+  padding-left: 10px;
+  padding-right: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Styling for navigation */
+nav {
+  background-color: #222;
+  text-align: center;
+  padding: 0.01rem 0;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  text-align: center;
+}
+
+nav ul li a {
+  text-align: center;
+  color: whitesmoke;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+/* Styling for sections */
+.section {
+  background-color: #ffe8f8;
+  padding: 1rem 0;
+  margin: 0 0px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .section-content {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .section-content p,
 .section-content ul,
 .section-content li,
 .section-content h2 {
-    margin-bottom: 20px; /* Adjust the value as needed for more or less spacing */
+  margin-bottom: 20px; /* Adjust the value as needed for more or less spacing */
 }
 
 /* Styling for footer */
 footer {
-    text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: white;
 }
