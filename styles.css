@@ -7,6 +7,11 @@ p {
   margin: 0;
   padding: 0;
 }
+a {
+            text-decoration: none; /* Remove underline */
+            color: black;
+            font-weight: bold; /* Change link color to your preference */
+        }
 @media (max-width: 576px) {
   .section {
     padding: 1rem 0;

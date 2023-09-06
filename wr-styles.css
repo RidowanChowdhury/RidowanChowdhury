@@ -6,6 +6,11 @@ p {
   margin: 0;
   padding: 0;
 } /* Container for the navigation menu */
+a {
+            text-decoration: none; /* Remove underline */
+            color: black;
+            font-weight: bold; /* Change link color to your preference */
+        }
 .nav-container {
   display: flex;
   justify-content: space-between;
