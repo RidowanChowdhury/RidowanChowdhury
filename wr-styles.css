@@ -31,6 +31,7 @@ p {
 .nav-item {
   margin: 0 10px; /* Adjust the margin for spacing between items */
   color: #fff; /* Text color for navigation items */
+  text-decoration: none;
 }
 .section {
   background-color: #ffe8f8;
