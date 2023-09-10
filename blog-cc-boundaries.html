@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="wr-styles.css">
+    <title>Ridowan-Graphql spring boot</title>
+</head>
+<body>
+<div class="nav-container">
+    <!-- Left-side navigation elements -->
+    <div class="left-nav">
+        <a class="nav-item">Md. Ridowan Chowdhury</a>
+    </div>
+
+    <!-- Right-side navigation elements -->
+    <div class="right-nav">
+        <a href="blog-lists.html" class="nav-item">Writings</a>
+        <a href="index.html" class="nav-item">About me</a>
+    </div>
+</div>
+<section class="section">
+    <div class="section-content">
+        <h2>Mastering Code Boundaries: A Guide from "Clean Code" by Robert C. Martin</h2>
+
+        <p>In the world of software development, creating clean, maintainable, and scalable code is a top priority.
+            Robert C. Martin's "Clean Code: A Handbook of Agile Software Craftsmanship" offers valuable insights into
+            achieving this goal. In this blog post, we'll dive into Chapter 8 of the book, titled "Boundaries."
+            This chapter explores the critical aspects of handling external systems, libraries, and APIs gracefully,
+            ensuring that your code remains clean and adaptable.</p>
+
+        <p> In software development, boundaries exist where your code interfaces with the external world. This includes
+            interactions with databases, web services, external libraries, and third-party APIs. Managing these
+            boundaries
+            effectively is essential for writing clean code that stands the test of time.</p>
+
+        <p> Martin suggests that the first step in dealing with boundaries is to learn about them thoroughly. Understand
+            the external systems, libraries, or APIs your code interacts with. This includes their quirks, limitations,
+            and conventions. By having a deep knowledge of these boundaries, you'll be better equipped to write clean
+            and efficient code.</p>
+        <h3>Wrapping Third-Party Code</h3>
+        <p>When using third-party libraries or APIs, it's essential to create your abstractions around them. Wrapping
+            third-party
+            code in your own interfaces and classes allows you to isolate your code from changes in the external
+            dependency.
+            This encapsulation makes your code more resilient to future updates.</p>
+        <p>Suppose you want to use a third-party library for sending emails, but you want to create a wrapper class to
+            make
+            it more compatible with your application's architecture:</p>
+        <pre><code>// Third-party Email Library (External Code)
+public class ThirdPartyEmailService {
+    public void sendEmail(String to, String subject, String message) {
+        // Code for sending emails using the third-party library
+        System.out.println("Email sent to " + to + " with subject: " + subject);
+    }
+}
+
+// Wrapper Class
+public class EmailServiceWrapper {
+    private ThirdPartyEmailService thirdPartyEmailService;
+
+    public EmailServiceWrapper() {
+        this.thirdPartyEmailService = new ThirdPartyEmailService();
+    }
+
+    public void sendEmail(String recipient, String subject, String body) {
+        // Perform any necessary adaptations or validations here
+        if (isValidRecipient(recipient)) {
+            thirdPartyEmailService.sendEmail(recipient, subject, body);
+        } else {
+            System.out.println("Invalid recipient. Email not sent.");
+        }
+    }
+
+    private boolean isValidRecipient(String recipient) {
+        // Implement recipient validation logic
+        return recipient != null && !recipient.isEmpty();
+    }
+}
+
+// Usage
+public class EmailApp {
+    public static void main(String[] args) {
+        EmailServiceWrapper emailService = new EmailServiceWrapper();
+        emailService.sendEmail("example@email.com", "Hello", "This is a test email.");
+    }
+}</code></pre>
+        <p>In this example:</p>
+        <ui>
+            <li> The ThirdPartyEmailService represents the external code, which you want to use for sending emails.</li>
+            <li> The EmailServiceWrapper is a wrapper class that encapsulates the third-party email service. It provides
+                a cleaner
+                interface for sending emails and can perform any necessary adaptations or validations.
+            </li>
+            <li> The EmailApp class demonstrates how to use the EmailServiceWrapper to send an email.</li>
+        </ui>
+        <p> By wrapping the third-party code in the EmailServiceWrapper, you can control the interaction with the
+            external library,
+            adapt it to your application's needs, and isolate your code from changes in the third-party library.</p>
+        <h3>Using Adaptars</h3>
+        <p>Adapters act as intermediaries between your code and external systems. They provide a translation layer,
+            ensuring that your
+            code and the external system can communicate seamlessly. Adapters are particularly useful when dealing with
+            legacy systems
+            or APIs with different conventions.</p>
+        <p>Suppose you are working with an external API that has different conventions than your application. You can
+            create
+            an adapter to bridge the gap. Here's a simplified example in Java:</p>
+        <pre><code>public class ExternalService {
+    public String fetchData() {
+        // Fetch data from the external API
+        return "Data from external service";
+    }
+}
+
+// Adapter
+public class MyServiceAdapter {
+    private ExternalService externalService;
+
+    public MyServiceAdapter(ExternalService externalService) {
+        this.externalService = externalService;
+    }
+
+    public String getDataFromMyService() {
+        // Adapt the external service's data to your application's needs
+        String externalData = externalService.fetchData();
+        String adaptedData = "Adapted: " + externalData;
+        return adaptedData;
+    }
+}</code></pre>
+        <p>In this example, the MyServiceAdapter wraps the ExternalService, adapting its data to fit your
+            application's conventions. To know more about adapters, check this
+            <a href="https://refactoring.guru/design-patterns/adapter">article</a>.</p>
+        <h3>Anti-Corruption Layers</h3>
+        <p>In cases where you have to work with systems that don't align with your code's architecture or design
+            principles, consider
+            using an anti-corruption layer. This layer acts as a shield, translating the data and interactions between
+            your code and
+            the external system, preventing corruption of your clean codebase.</p>
+        <p>An anti-corruption layer can be helpful when dealing with legacy systems or mismatched architectures.
+            Here's a simplified example below. In this scenario, the AntiCorruptionLayer shields your clean code
+            from the complexities of the legacy system.</p>
+        <pre><code>// Legacy System
+public class LegacySystem {
+    public String fetchLegacyData() {
+        // Fetch data from the legacy system
+        return "Legacy data";
+    }
+}
+
+// Anti-Corruption Layer
+public class AntiCorruptionLayer {
+    private LegacySystem legacySystem;
+
+    public AntiCorruptionLayer(LegacySystem legacySystem) {
+        this.legacySystem = legacySystem;
+    }
+
+    public String fetchDataFromCleanCode() {
+        // Adapt legacy data to fit clean code conventions
+        String legacyData = legacySystem.fetchLegacyData();
+        String adaptedData = "Adapted: " + legacyData;
+        return adaptedData;
+    }
+}</code></pre>
+        <br>
+        <h3>Tests as Boundaries</h3>
+        <p>Testing at boundaries is crucial. Write comprehensive unit tests and integration tests for the code that
+            interacts with external
+            systems. This helps catch issues early and ensures that your code handles boundary conditions
+            gracefully.</p>
+        <p>Let's consider testing a database interaction using Java and JUnit:</p>
+        <pre><code>// Data Access Object (DAO)
+public class UserDao {
+    // Database interaction methods
+    public User findById(long id) {
+        // Database query logic
+        return null; // Placeholder for brevity
+    }
+
+    public void save(User user) {
+        // Database save logic
+    }
+}
+
+// Unit Test for UserDao
+public class UserDaoTest {
+    @Test
+    public void testFindById() {
+        UserDao userDao = new UserDao();
+        User user = userDao.findById(1L);
+        assertNotNull(user);
+    }
+
+    @Test
+    public void testSave() {
+        UserDao userDao = new UserDao();
+        User user = new User("John Doe");
+        userDao.save(user);
+        assertNotNull(user.getId());
+    }
+}</code></pre>
+        <p>In this example, we've created a UserDao to interact with a database. The UserDaoTest class
+            demonstrates unit tests for the UserDao to ensure it functions correctly at the boundary.
+        </p>  <br>
+
+        <h3>Case Study: Database Interaction</h3>
+        <p>To illustrate the importance of boundaries, let's consider a common scenario: interacting with a database.
+            You have your clean,
+            well-structured codebase, but how do you ensure that it remains clean when dealing with the database
+            boundary?</p>
+        <ui>
+            <li><a> Separation of Concerns:</a> Keep your database code separate from your application logic. Use data
+                access objects (DAOs) or
+                repositories to encapsulate database interactions. This isolation makes it easier to change your
+                database technology without
+                affecting the rest of your application.
+            </li>
+
+            <li><a>Interfaces:</a> Define clear interfaces for your DAOs or repository classes. This abstraction allows
+                you to switch between different
+                database implementations (e.g., MySQL, PostgreSQL) effortlessly.
+            </li>
+
+            <li><a>Error Handling:</a> Implement robust error handling at the boundary. Handle database-related
+                exceptions gracefully and provide
+                meaningful error messages to aid debugging.
+            </li>
+
+            <li><a>Testing:</a> Write unit tests for your DAOs and repositories. Use in-memory databases or test doubles
+                to ensure that your database
+                interactions are tested thoroughly.
+            </li>
+        </ui>
+        <p>In "Clean Code," Robert C. Martin emphasizes that mastering boundaries is key to writing clean, maintainable,
+            and adaptable code. By encapsulating external interactions, using adapters, and implementing anti-corruption
+            layers,
+            you can ensure that your codebase remains resilient to changes in external systems.</p>
+
+        <p>Remember that clean code isn't just about the code you write but also about how it interacts with the world
+            outside. Embrace the principles outlined in Chapter 8, and you'll be on your way to becoming a better
+            software craftsman.</p>
+
+
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2023 Ridowan</p>
+</footer>
+</body>
+</html>
